@@ -134,9 +134,9 @@ export default function Home() {
       <Navigation />
 
       {/* Main Content */}
-      <div className="website-content relative w-full mt-16 sm:mt-20" ref={contentRef}>
-        {/* Hero Section */}
-        <div className="hero absolute left-0 w-full transform text-center uppercase z-10 px-4 sm:px-6">
+      <div className="website-content relative w-full h-screen" ref={contentRef}>
+        {/* Hero Section - Centered */}
+        <div className="hero absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center uppercase z-10 px-4 sm:px-6">
           <div className="hero-text mb-2 sm:mb-4" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
             <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight sm:leading-none" style={{ fontFamily: "'PP Migra', serif" }}>
               discover
@@ -147,7 +147,7 @@ export default function Home() {
               premium
             </h1>
           </div>
-          <div className="hero-text" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
+          <div className="hero-text mb-6 sm:mb-8 md:mb-12" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
             <h1
               className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight sm:leading-none"
               style={{ fontFamily: "'Sharp Grotesk', sans-serif" }}
@@ -158,7 +158,7 @@ export default function Home() {
 
           <Link
             href="/shop"
-            className="inline-block mt-6 sm:mt-8 md:mt-12 px-6 py-3 sm:px-8 sm:py-3 bg-black text-white uppercase text-xs sm:text-sm font-semibold hover:bg-gray-800 transition-colors"
+            className="inline-block px-6 py-3 sm:px-8 sm:py-3 bg-black text-white uppercase text-xs sm:text-sm font-semibold hover:bg-gray-800 transition-colors"
           >
             Shop Now
           </Link>

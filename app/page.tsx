@@ -17,7 +17,6 @@ export default function Home() {
     "/f.jpg",
   ]
 
-  
   const loaderImages = [
     { src: "/o.jpg", width: 400, height: 600 },
     { src: "/t.jpg", width: 400, height: 600 },
@@ -89,13 +88,13 @@ export default function Home() {
         ref={loaderRef}
       >
         <div
-          className="loader-imgs w-[150%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-8"
+          className="loader-imgs w-full md:w-[150%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 md:gap-8 px-4 md:px-0"
           style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
         >
           {loaderImages.map((image, index) => (
             <div
               key={index}
-              className="loader-img relative flex-1 min-w-[200px] h-80" 
+              className="loader-img relative flex-1 min-w-[80px] xs:min-w-[100px] sm:min-w-[120px] md:min-w-[200px] h-40 sm:h-48 md:h-80"
               style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
             >
               <Image 
@@ -106,14 +105,14 @@ export default function Home() {
                 height={image.height}
                 quality={90} 
                 priority 
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 480px) 80px, (max-width: 640px) 100px, (max-width: 768px) 120px, (max-width: 1200px) 200px, 400px"
               />
             </div>
           ))}
           {loaderImages.map((image, index) => (
             <div
               key={`dup-${index}`}
-              className="loader-img relative flex-1 min-w-[200px] h-80"
+              className="loader-img relative flex-1 min-w-[80px] xs:min-w-[100px] sm:min-w-[120px] md:min-w-[200px] h-40 sm:h-48 md:h-80"
               style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
             >
               <Image 
@@ -124,7 +123,7 @@ export default function Home() {
                 height={image.height}
                 quality={90}
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 480px) 80px, (max-width: 640px) 100px, (max-width: 768px) 120px, (max-width: 1200px) 200px, 400px"
               />
             </div>
           ))}
@@ -135,22 +134,22 @@ export default function Home() {
       <Navigation />
 
       {/* Main Content */}
-      <div className="website-content relative w-full mt-20" ref={contentRef}>
+      <div className="website-content relative w-full mt-16 sm:mt-20" ref={contentRef}>
         {/* Hero Section */}
-        <div className="hero absolute left-0 w-full transform text-center uppercase z-10">
-          <div className="hero-text mb-4" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
-            <h1 className="text-6xl md:text-8xl font-light leading-none" style={{ fontFamily: "'PP Migra', serif" }}>
+        <div className="hero absolute left-0 w-full transform text-center uppercase z-10 px-4 sm:px-6">
+          <div className="hero-text mb-2 sm:mb-4" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight sm:leading-none" style={{ fontFamily: "'PP Migra', serif" }}>
               discover
             </h1>
           </div>
-          <div className="hero-text mb-4" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
-            <h1 className="text-6xl md:text-8xl font-light leading-none" style={{ fontFamily: "'PP Migra', serif" }}>
+          <div className="hero-text mb-2 sm:mb-4" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light leading-tight sm:leading-none" style={{ fontFamily: "'PP Migra', serif" }}>
               premium
             </h1>
           </div>
           <div className="hero-text" style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}>
             <h1
-              className="text-6xl md:text-8xl font-bold leading-none"
+              className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight sm:leading-none"
               style={{ fontFamily: "'Sharp Grotesk', sans-serif" }}
             >
               style
@@ -159,18 +158,18 @@ export default function Home() {
 
           <Link
             href="/shop"
-            className="inline-block mt-12 px-8 py-3 bg-black text-white uppercase text-sm font-semibold hover:bg-gray-800 transition-colors"
+            className="inline-block mt-6 sm:mt-8 md:mt-12 px-6 py-3 sm:px-8 sm:py-3 bg-black text-white uppercase text-xs sm:text-sm font-semibold hover:bg-gray-800 transition-colors"
           >
             Shop Now
           </Link>
         </div>
 
         {/* Footer */}
-        <footer className="fixed bottom-8 right-8 flex gap-3 z-20">
+        <footer className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-8 sm:bottom-8 flex justify-center sm:justify-start gap-2 sm:gap-3 z-20">
           {footerImages.map((src, index) => (
             <div
               key={index}
-              className="footer-item w-20 h-20 bg-white overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+              className="footer-item w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
               style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
             >
               <Image
@@ -180,6 +179,7 @@ export default function Home() {
                 width={80}
                 height={80}
                 quality={85}
+                sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
               />
             </div>
           ))}
